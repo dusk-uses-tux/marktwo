@@ -1,0 +1,4 @@
+pkill -9 waybar; \
+waybar &disown; \
+sleep 1; \
+waybar -c .config/waybar/configbottom.jsonc -s .config/waybar/stylebottom.css &disown
