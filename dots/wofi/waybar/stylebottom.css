@@ -1,0 +1,14 @@
+@import url("colors.css");
+
+** {
+    background-color: @window_bg_color;
+    color: @window_fg_color;
+    border-radius: 0;
+    min-height: 0;
+    font-family: "GoMono Nerd Font";
+    font-size: 16px;
+}
+
+.module {
+    margin: 4px 0;
+}

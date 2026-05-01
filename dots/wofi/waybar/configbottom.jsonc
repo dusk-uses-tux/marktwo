@@ -1,0 +1,9 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "left",
+  "spacing": 5,
+  "width": 42,
+
+  "modules-left": ["wlr/taskbar",],
+},
