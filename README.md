@@ -1,7 +1,7 @@
 
 # marktwo
 
- Marktwo (stylized "marktwo") is an crafted pack of dotfiles, built for minimal GNU/Linux distributions.
+ Mark II (stylized "marktwo") is an crafted pack of dotfiles, built for minimal GNU/Linux distributions.
 
 # Demo
 <p align="center">
