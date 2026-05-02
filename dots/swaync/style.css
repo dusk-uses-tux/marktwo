@@ -20,26 +20,7 @@
 }
 
 /* remove all rounding everywhere */
-.notification,
-.notification-content,
-.notification-action,
-.notification-default-action,
-.inline-reply-entry,
-.inline-reply-button,
-.widget-title,
-.widget-title>button,
-.widget-dnd,
-.widget-dnd>switch,
-.widget-dnd>switch slider,
-.widget-label>label,
-.widget-buttons-grid,
-.widget-buttons-grid>flowbox>flowboxchild>button,
-.widget-volume,
-.widget-backlight,
-.widget-mpris,
-.widget-mpris>box>button,
-.widget-mpris-player,
-.widget-mpris-album-art {
+* {
   border-radius: 0;
 }
 
@@ -47,7 +28,7 @@
 .notification {
   background: @window_bg_color;
   color: @window_fg_color;
-  border: 2px solid @window_fg_color;
+  /* border: 1px solid @window_fg_color; */
   margin: 3px -2px 3px 0;
 }
 
@@ -73,7 +54,7 @@
 
 /* actions */
 .notification-action {
-  border: 2px solid @window_fg_color;
+  /* border: 1px solid @window_fg_color; */
 }
 
 .notification-default-action:hover,
@@ -86,20 +67,20 @@
 .inline-reply-entry {
   background: @window_bg_color;
   color: @window_fg_color;
-  border: 1px solid @window_fg_color;
+  /* border: 1px solid @window_fg_color; */
 }
 
 .inline-reply-button {
   margin-top: 4px;
   margin-left: 4px;
   background: @window_bg_color;
-  border: 1px solid @window_fg_color;
+  /* border: 1px solid @window_fg_color; */
   color: @window_fg_color;
 }
 
 .inline-reply-button:disabled {
   opacity: 0.4;
-  border: 1px solid transparent;
+  /* border: 1px solid transparent; */
 }
 
 .inline-reply-button:hover {
@@ -129,7 +110,7 @@
 /* control center */
 .control-center {
   background: @window_bg_color;
-  border: 2px solid @window_fg_color;
+  /* border: 1px solid @window_fg_color; */
 }
 
 /* widgets */
