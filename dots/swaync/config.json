@@ -51,7 +51,7 @@
       "actions": [
         {
           "label": "󰌾",
-          "command": "playerctl pause | $HOME/.config/sway/swaylock-corrupter.sh"
+          "command": "playerctl pause | /usr/bin/hyprlock"
         },
         {
           "label": "󰍃",
