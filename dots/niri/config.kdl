@@ -6,10 +6,12 @@
 // =======================================================
 // STARTUP APPLICATIONS
 // =======================================================
-spawn-at-startup "./.waybarrc"
+
+spawn-at-startup "waybar" "-c" ".config/waybar/configbottom.jsonc" "-s" ".config/waybar/stylebottom.css"
 spawn-at-startup "pipewire"
 spawn-at-startup "pipewire-pulse"
 spawn-at-startup "wireplumber"
+spawn-at-startup "waybar"
 
 // =======================================================
 // LAYER/WINDOW RULES (OVERLAYS / BACKDROPS)
@@ -17,11 +19,6 @@ spawn-at-startup "wireplumber"
 layer-rule {
     exclude namespace="swaync-notification-window"
     opacity 0.9
-
-    shadow {
-        off
-    }
-
     background-effect {
         xray true
         blur true
@@ -63,12 +60,13 @@ gestures {
 // =======================================================
 // LAYOUT CONFIG
 // =======================================================
+prefer-no-csd
+
 layout {
     gaps 8
     background-color "#0e0e0e00"
     always-center-single-column false
     center-focused-column "never"
-
     preset-column-widths {
         proportion 0.4
         proportion 0.5
@@ -92,39 +90,14 @@ layout {
         active-color "#ebdbb266"
         inactive-color "#0e0e0e"
     }
-
-    shadow {
-        off
-        softness 10
-        spread 3
-        offset x=0 y=5
-    }
-
-    tab-indicator {
-        width 2
-        gap -5
-        gaps-between-tabs 5
-        corner-radius 10
-        active-color "#fff"
-        inactive-color "#ffffff55"
-    }
-
-    insert-hint {
-        color "#ffffff22"
-    }
 }
-
-// Prefer client-side decorations
-prefer-no-csd
-
-// screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 // =======================================================
 // ANIMATIONS
 // =======================================================
 animations {
     window-open {
-        spring damping-ratio=1.0 stiffness=700 epsilon=0.0001
+        spring damping-ratio=0.80 stiffness=523 epsilon=0.0001
     }
     window-close {
         spring damping-ratio=1.0 stiffness=700 epsilon=0.1
@@ -156,28 +129,16 @@ window-rule {
     open-floating true
 }
 
-// Default rounding behavior
-window-rule {
-    geometry-corner-radius 0
-    clip-to-geometry true
-}
-
-// AlacriTTY sizing rule
-window-rule {
-	match app-id="alacritty"
-    default-column-width { proportion 0.4; }
-}
-
 // =======================================================
 // HOTKEY BINDINGS
 // =======================================================
 binds {
-
     // Help / overlays
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Overview
     Mod+O repeat=false { toggle-overview; }
+    Mod+R repeat=true { spawn "notify-send" "Test" "meow meow meow meow meow" "--icon=Pictures/test.jpg"; }
 
     // App launching
     Mod+T { spawn "alacritty"; }
@@ -313,8 +274,8 @@ binds {
 // OVERVIEW
 // =======================================================
 overview {
-    backdrop-color "#000"
-    zoom 0.5
+    backdrop-color "transparent"
+    zoom 0.6
 }
 
 // =======================================================
