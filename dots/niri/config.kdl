@@ -42,9 +42,9 @@ window-rule {
 	open-floating true
 }
 
-// swww daemon layering
+// awww daemon layering
 layer-rule {
-    match namespace="^swww-daemon$"
+    match namespace="^awww-daemon$"
     place-within-backdrop true
 }
 
@@ -288,5 +288,5 @@ hotkey-overlay {
 // =======================================================
 // ADDITIONAL STARTUP SERVICES
 // =======================================================
-spawn-at-startup "swww-daemon"
+spawn-at-startup "awww-daemon"
 spawn-at-startup "xwayland-satellite"
