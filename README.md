@@ -27,7 +27,7 @@
 | [swaync](https://github.com/ErikReider/SwayNotificationCenter) | Notifications |
 | [wofi](https://hg.sr.ht/~scoopta/wofi) | App launcher |
 | [matugen](https://github.com/InioX/matugen) | Color generation |
-| [fastfetch](https://github.com/fastfetch-cli/fastfetch) | System info |
+| [pfetch](https://github.com/dylanaraps/pfetch) | System info |
 
 ## Installation
 
