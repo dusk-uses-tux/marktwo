@@ -7,11 +7,10 @@
 // STARTUP APPLICATIONS
 // =======================================================
 
-spawn-at-startup "waybar" "-c" ".config/waybar/configbottom.jsonc" "-s" ".config/waybar/stylebottom.css"
 spawn-at-startup "pipewire"
 spawn-at-startup "pipewire-pulse"
 spawn-at-startup "wireplumber"
-spawn-at-startup "waybar"
+spawn-at-startup "sh" ".waybarrc"
 
 // =======================================================
 // LAYER/WINDOW RULES (OVERLAYS / BACKDROPS)
