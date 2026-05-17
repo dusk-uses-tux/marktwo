@@ -58,6 +58,7 @@ A minimal, sharp-edged Linux desktop built on [Niri](https://github.com/YaLTeR/n
 | [wpctl](https://gitlab.freedesktop.org/pipewire/wireplumber) | PipeWire volume CLI |
 | [nwg-bar](https://github.com/nwg-piotr/nwg-bar) | Power/session menu |
 | [btop](https://github.com/aristocratos/btop) | System monitor |
+| [adw-gtk3](https://github.com/lassekongo83/adw-gtk3) | GTK theme |
 
 ### Shell
 
