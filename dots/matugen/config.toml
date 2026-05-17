@@ -26,7 +26,7 @@ output_path = '~/.config/wofi/colors.css'
 [templates.swaync]
 input_path = './templates/gtk-colors.css'
 output_path = '~/.config/swaync/colors.css'
-
+post_hook = 'swaync-client -R -rs'
 # [templates.gtk4]
 # input_path = './templates/gtk-colors.css'
 # output_path = '~/.config/gtk-4.0/colors.css'
