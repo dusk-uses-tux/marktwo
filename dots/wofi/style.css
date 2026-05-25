@@ -1,13 +1,15 @@
 @import url(".config/wofi/colors.css");
 
-
+* {
+	border-radius: 0px;
+}
 
 window {
     margin: 0px;
     /* border: 0.5px solid @window_fg_coloree; */
     background-color: @window_bg_color;
-    font-family: Cousine Nerd Font;
-    border-radius: 0px;
+    font-family: GoMono Nerd Font;
+	border: 1px solid @window_fg_color;
 }
 
 #input {
