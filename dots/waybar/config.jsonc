@@ -3,12 +3,13 @@
   "reload_style_on_change": true,
   "layer": "top",
   "position": "top",
-  "spacing": 0,
+  // "spacing": 8,
   "height": 32,
+  // "margin": 8,
 
   // ===== MODULE PLACEMENT =====
   "modules-left": [
-    "niri/workspaces"
+    "niri/workspaces", "hyprland/workspaces"
   ],
 
   "modules-center": [
@@ -44,6 +45,23 @@
       "5": []
     }
   },
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+
+    "format-icons": {
+      "default": " ♥ ",
+      "active": "  "
+    },
+
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
 
   // ===== CPU =====
   "cpu": {
@@ -53,11 +71,19 @@
   },
 
   // ===== CLOCK =====
-  "clock": {
+"clock": {
     "format": "{:%H:%M}",
-    "format-alt": "{:%d %B W%V %Y}",
-    "tooltip": false
-  },
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+        "mode": "month",
+        "mode-mon-col": 3,
+        "weeks-pos": "right",
+        "on-scroll": 1,
+        "format": {
+        "today": "<span color='#ffbbbb'>{}</span>"
+        }
+    },
+},
 
   // ===== WINDOW TITLE (unused unless added to modules) =====
   "niri/window": {
