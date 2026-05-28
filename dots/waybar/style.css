@@ -1,26 +1,25 @@
+/* import color sheet */
 @import url("colors.css");
+/* declare bar wide stuff */
+window#waybar {
+    background-color: @window_bg_color;
+}
 
 * {
-    background-color: @window_bg_color;
-    color: @window_fg_color;
     border-radius: 0;
     min-height: 0;
     font-family: "GoMono Nerd Font";
     font-size: 13px;
 }
 
-.modules-left {
-    margin-left: 0px;
+/* module coloring */
+
+.module {
+    color: @window_fg_color;
+	background-color: transparent;
 }
 
-.modules-right {
-    margin-right: 0px;
-}
-
-#custom-expand-icon{
-	color: @window_bg_color;
-	background-color: @window_fg_color;
-}
+/* workspaces */
 
 #workspaces button {
     all: initial;
@@ -33,29 +32,17 @@
     opacity: 0.5;
 }
 
+/* other module stuff */
 #tray,
 #cpu,
 #battery,
 #network,
 #bluetooth,
-#pulseaudio,
-#custom-update {
+#pulseaudio {
     min-width: 12px;
     margin: 0 7.5px;
 }
-
 tooltip {
-    padding: 2px;
+    background: @window_bg_color;
 }
 
-#custom-update {
-    font-size: 10px;
-}
-
-#clock {
-    margin-left: 8.75px;
-}
-
-.hidden {
-    opacity: 0;
-}
