@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Reload marktwo
+Icon=view-refresh
+Exec=sh -c "$HOME/.markrc"
+Comment=Reload the shell to apply non-hotswap edits (like waybar JSONC)
+Terminal=false
