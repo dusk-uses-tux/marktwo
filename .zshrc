@@ -84,8 +84,8 @@ path_with_icons() {
 # Prompt
 # ---------------------------------
 PROMPT='
-[  ][ %* ][ $(path_with_icons) ]
-$ '
+%* $(path_with_icons)
+> '
 
 # ---------------------------------
 # Completion
@@ -104,18 +104,15 @@ fpath=(
 # ---------------------------------
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # ---------------------------------
 # Aliases
 # ---------------------------------
-alias ys='yay -S'
 alias ff='fastfetch'
 alias pf='pfetch'
 alias gc='git clone'
-
+alias ,/='zsh '
 alias ls='eza --icons'
 alias l='eza --icons'
-
 alias clock='tty-clock -c -C 7 -t -B'
 
 # ---------------------------------
@@ -128,4 +125,5 @@ bindkey "^[[1;3C" forward-word
 # Startup
 # ---------------------------------
 clear
+echo
 pfetch
