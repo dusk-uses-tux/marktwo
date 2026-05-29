@@ -10,14 +10,15 @@
 spawn-at-startup "pipewire"
 spawn-at-startup "pipewire-pulse"
 spawn-at-startup "wireplumber"
-spawn-at-startup "sh" ".waybarrc"
+spawn-at-startup "sh" ".markrc"
 
 // =======================================================
 // LAYER/WINDOW RULES (OVERLAYS / BACKDROPS)
 // =======================================================
+// shell blur
 layer-rule {
     exclude namespace="swaync-notification-window"
-    opacity 0.9
+    //opacity 0.9
     background-effect {
         xray true
         blur true
@@ -26,6 +27,14 @@ layer-rule {
     }
 }
 
+layer-rule {
+	match namespace="wofi"
+	shadow {
+		off
+	}
+}
+
+// firefox backdrop blur
 window-rule {
 	match app-id="firefox"
 	background-effect {
@@ -36,10 +45,15 @@ window-rule {
 	}
 }
 
+// force floating and top rounded corners
 window-rule {
 	match app-id=".*"
 	open-floating true
+	// clip-to-geometry true
+	// geometry-corner-radius 14 14 0 0
 }
+
+prefer-no-csd
 
 // awww daemon layering
 layer-rule {
@@ -47,6 +61,12 @@ layer-rule {
     place-within-backdrop true
 }
 
+// Adwaita apps rounding
+window-rule  {
+	match app-id="org.gnome.*"
+	clip-to-geometry true
+	geometry-corner-radius 16 16 16 16
+}
 // =======================================================
 // GESTURES
 // =======================================================
@@ -59,7 +79,7 @@ gestures {
 // =======================================================
 // LAYOUT CONFIG
 // =======================================================
-prefer-no-csd
+//prefer-no-csd
 
 layout {
     gaps 8
@@ -75,7 +95,7 @@ layout {
         proportion 0.9
     }
 
-    default-column-width { proportion 0.9; }
+    default-column-width { proportion 0.6; }
 
     focus-ring {
         // off
@@ -84,37 +104,46 @@ layout {
     }
 
     border {
-        on
-        width 0
-        active-color "#ebdbb266"
+        off
+        width 3
+        active-color "#ebebeb"
         inactive-color "#0e0e0e"
     }
+	shadow {
+		off
+		offset x=8 y=8
+		softness 0
+	}
 }
 
 // =======================================================
 // ANIMATIONS
 // =======================================================
 animations {
+    workspace-switch {
+		spring damping-ratio=0.78 stiffness=400 epsilon=0.0001
+    }
     window-open {
         spring damping-ratio=0.80 stiffness=523 epsilon=0.0001
     }
     window-close {
-        spring damping-ratio=1.0 stiffness=700 epsilon=0.1
-    }
-    window-resize {
-        spring damping-ratio=1.0 stiffness=800 epsilon=0.001
-    }
-    window-movement {
-        spring damping-ratio=1.0 stiffness=600 epsilon=0.0001
-    }
-    overview-open-close {
-        spring damping-ratio=1.0 stiffness=900 epsilon=0.0001
-    }
-    workspace-switch {
-        spring damping-ratio=1.0 stiffness=800 epsilon=0.00001
+        spring damping-ratio=0.80 stiffness=523 epsilon=0.0001
     }
     horizontal-view-movement {
-        spring damping-ratio=1.0 stiffness=700 epsilon=0.0001
+        spring damping-ratio=0.85 stiffness=423 epsilon=0.0001
+    }
+    window-movement {
+        spring damping-ratio=0.75 stiffness=323 epsilon=0.0001
+    }
+    window-resize {
+        spring damping-ratio=0.85 stiffness=423 epsilon=0.0001
+    }
+    config-notification-open-close {
+        spring damping-ratio=0.65 stiffness=923 epsilon=0.001
+    }
+    screenshot-ui-open {
+        duration-ms 200
+        curve "ease-out-quad"
     }
 }
 
@@ -137,7 +166,7 @@ binds {
 
     // Overview
     Mod+O repeat=false { toggle-overview; }
-    Mod+R repeat=true { spawn "notify-send" "Test" "meow meow meow meow meow" "--icon=Pictures/test.jpg"; }
+    Mod+R repeat=true { spawn "notify-send" "This is an test notification" "nyan nyan nyan nyan nyan nyan nyan nyan" "--icon=Pictures/test.jpg"; }
 
     // App launching
     Mod+T { spawn "alacritty"; }
@@ -145,7 +174,7 @@ binds {
     Alt+Space { spawn "wofi" "--show" "drun" "--prompt" "Find..."; }
     Mod+X { spawn "wofi-emoji"; }
     Mod+L { spawn "hyprlock"; }
-    Mod+E { spawn "nautilus"; }
+    Mod+E { spawn "nautilus" "-w"; }
     Mod+Escape { spawn "nwg-bar"; }
     Mod+N { spawn "swaync-client" "-t"; }
     Mod+Z { spawn "waypaper"; }
@@ -253,7 +282,7 @@ binds {
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
 
-    Mod+F { maximize-column; }
+    Mod+F { maximize-window-to-edges; }
     Mod+Shift+F { fullscreen-window; }
     Mod+C { center-column; }
 
@@ -274,7 +303,10 @@ binds {
 // =======================================================
 overview {
     backdrop-color "transparent"
-    zoom 0.6
+    zoom 0.7
+    workspace-shadow {
+    	off
+    }
 }
 
 // =======================================================
@@ -287,5 +319,18 @@ hotkey-overlay {
 // =======================================================
 // ADDITIONAL STARTUP SERVICES
 // =======================================================
+
 spawn-at-startup "awww-daemon"
 spawn-at-startup "xwayland-satellite"
+
+// =======================================================
+// INPUT
+// =======================================================
+
+input {
+    keyboard {
+        xkb {
+            options "compose:ralt"
+        }
+    }
+}
