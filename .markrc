@@ -2,11 +2,11 @@
 
 pkill waybar
 waybar >/dev/null 2>&1 &
-sleep 0.1
+sleep 0.2
 
 waybar \
   -c ~/.config/waybar/configbottom.jsonc \
   -s ~/.config/waybar/stylebottom.css \
   >/dev/null 2>&1 &
 
-swaync-client -R -r
+swaync-client -R -rs
