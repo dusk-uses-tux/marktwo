@@ -9,8 +9,7 @@
 /* hover consistency */
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
-  opacity: 1;
-  background: @window_bg_color;
+  background: @accent_bg_color;
 }
 
 .notification-row {
@@ -84,8 +83,7 @@
 }
 
 .inline-reply-button:hover {
-  background: @window_fg_color;
-  color: @window_bg_color;
+  background: @accent_bg_color;
 }
 
 /* text */
@@ -119,33 +117,34 @@
   background: @window_bg_color;
   padding: 5px 10px;
   margin: 10px;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
 }
 
 .widget-title>button {
-  font-size: 1rem;
+  font-size: 2rem;
   color: @window_fg_color;
   background: @window_bg_color;
 }
 
 .widget-title>button:hover {
-  background: @window_fg_color;
+  background: @accent_bg_color;
   color: @window_bg_color;
 }
 
 .widget-dnd {
   background: @window_bg_color;
-  padding: 5px 10px;
-  margin: 5px 10px;
+  padding: 0px 12px;
+  margin: 0px 12px;
   color: @window_fg_color;
 }
 
 .widget-dnd>switch {
-  background: @window_fg_color;
+  border: 1px solid @window_fg_color;
+  background: @window_bg_color;
 }
 
-.widget-dnd>switch:checked {
-  background: @window_fg_color;
+.widget-dnd>switch slider {
+    background-color: @window_fg_color;
 }
 
 /* labels */
@@ -165,18 +164,20 @@
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
   margin: 3px;
-  padding: 4px 30px;
+  padding: 6px 44px;
   background: @window_bg_color;
   color: @window_fg_color;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
-  background: @window_fg_color;
-  color: @window_bg_color;
+  background: @window_bg_color;
+  color: @window_fg_color;
+  box-shadow: 14px 2px 13px -14px alpha(@window_fg_color, 0.7) inset;
+  border-left: 1px solid @window_fg_color;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:checked {
-  background: @window_fg_color;
+  background: @accent_bg_color;
   color: @window_bg_color;
 }
 
@@ -212,6 +213,6 @@ picture.mpris-background {
 }
 
 .notification-action>button:hover {
-  background-color: @window_fg_color;
+  background: @accent_bg_color;
   color: @window_bg_color;
 }
