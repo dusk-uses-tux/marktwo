@@ -6,12 +6,6 @@
   font-size: 13px;
 }
 
-/* hover consistency */
-.control-center .notification-row:focus,
-.control-center .notification-row:hover {
-  background: @accent_bg_color;
-}
-
 .notification-row {
   outline: none;
   margin: 0;
@@ -27,8 +21,14 @@
 .notification {
   background: @window_bg_color;
   color: @window_fg_color;
-  /* border: 1px solid @window_fg_color; */
   margin: 3px -2px 3px 0;
+}
+
+.notification-default-action:hover {
+  background: @window_bg_color;
+  box-shadow: 14px 2px 13px -14px alpha(@window_fg_color, 0.7) inset;
+  border-left: 1px solid @window_fg_color;
+  transition: all 300ms ease;
 }
 
 /* close button */
@@ -56,12 +56,6 @@
   /* border: 1px solid @window_fg_color; */
 }
 
-.notification-default-action:hover,
-.notification-action:hover {
-  color: @window_bg_color;
-  background: @window_fg_color;
-}
-
 /* inline reply */
 .inline-reply-entry {
   background: @window_bg_color;
@@ -79,7 +73,6 @@
 
 .inline-reply-button:disabled {
   opacity: 0.4;
-  /* border: 1px solid transparent; */
 }
 
 .inline-reply-button:hover {
@@ -108,7 +101,6 @@
 /* control center */
 .control-center {
   background: @window_bg_color;
-  /* border: 1px solid @window_fg_color; */
 }
 
 /* widgets */
