@@ -45,6 +45,6 @@ window {
 }
 
 #input:focus {
-    box-shadow: 14px 2px 13px -20px alpha(@fullscreen_color, 0.7) inset;
+    box-shadow: 14px 2px 13px -20px alpha(#F9E2AF, 0.7) inset;
     border-left: 1px solid @fullscreen_color;
 }
