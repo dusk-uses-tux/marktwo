@@ -1,9 +1,12 @@
 @import url("colors.css");
 
-** {
+* {
+    border-radius: 0;
+}
+
+window#waybar {
     background-color: @window_bg_color;
     color: @window_fg_color;
-    border-radius: 0;
     min-height: 0;
     font-family: "GoMono Nerd Font";
     font-size: 16px;
@@ -11,4 +14,31 @@
 
 .module {
     margin: 4px 0;
+}
+
+#taskbar button{
+	padding: 8px 0px 0px;
+}
+
+#taskbar button {
+    transition: all 300ms ease;
+}
+
+#taskbar button.active {
+    border-left: 1px solid @window_fg_color;
+    box-shadow: 14px 2px 13px -20px alpha(@window_fg_color, 0.7) inset;
+}
+
+#taskbar button.maximized {
+    border-left: 1px solid @fullscreen_color;
+    box-shadow: 14px 2px 13px -20px alpha(#F9E2AF, 0.7) inset;
+}
+
+#taskbar button.fullscreen {
+    border-left: 1px solid #bbe8c1;
+    box-shadow: 14px 2px 13px -20px alpha(#bbe8c1, 0.7) inset;
+}
+
+tooltip {
+    background: @window_bg_color;
 }
