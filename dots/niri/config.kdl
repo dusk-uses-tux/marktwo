@@ -17,8 +17,9 @@ spawn-at-startup "sh" ".markrc"
 // =======================================================
 // shell blur
 layer-rule {
+    exclude namespace="wofi"
     exclude namespace="swaync-notification-window"
-    //opacity 0.9
+    opacity 0.9
     background-effect {
         xray true
         blur true
@@ -30,7 +31,7 @@ layer-rule {
 layer-rule {
 	match namespace="wofi"
 	shadow {
-		off
+	on
 	}
 }
 
@@ -45,12 +46,10 @@ window-rule {
 	}
 }
 
-// force floating and top rounded corners
+// force floating 
 window-rule {
 	match app-id=".*"
 	open-floating true
-	// clip-to-geometry true
-	// geometry-corner-radius 14 14 0 0
 }
 
 prefer-no-csd
@@ -67,6 +66,7 @@ window-rule  {
 	clip-to-geometry true
 	geometry-corner-radius 16 16 16 16
 }
+
 // =======================================================
 // GESTURES
 // =======================================================
@@ -110,7 +110,7 @@ layout {
         inactive-color "#0e0e0e"
     }
 	shadow {
-		off
+		on
 		offset x=8 y=8
 		softness 0
 	}
@@ -120,6 +120,7 @@ layout {
 // ANIMATIONS
 // =======================================================
 animations {
+	off
     workspace-switch {
 		spring damping-ratio=0.78 stiffness=400 epsilon=0.0001
     }
@@ -160,6 +161,7 @@ window-rule {
 // =======================================================
 // HOTKEY BINDINGS
 // =======================================================
+
 binds {
     // Help / overlays
     Mod+Shift+Slash { show-hotkey-overlay; }
@@ -175,9 +177,8 @@ binds {
     Mod+X { spawn "wofi-emoji"; }
     Mod+L { spawn "hyprlock"; }
     Mod+E { spawn "nautilus" "-w"; }
-    Mod+Escape { spawn "nwg-bar"; }
+    Mod+Escape { spawn "wofi-power-menu"; }
     Mod+N { spawn "swaync-client" "-t"; }
-    Mod+Z { spawn "waypaper"; }
 
     // Audio controls (PipeWire / WirePlumber)
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
@@ -324,13 +325,13 @@ spawn-at-startup "awww-daemon"
 spawn-at-startup "xwayland-satellite"
 
 // =======================================================
-// INPUT
+// INPUT 
 // =======================================================
 
-input {
-    keyboard {
-        xkb {
-            options "compose:ralt"
-        }
-    }
-}
+// input {
+//     keyboard {
+//         xkb {
+//             options "compose:ralt"
+//         }
+//     }
+// }
