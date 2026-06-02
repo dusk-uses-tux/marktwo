@@ -1,0 +1,38 @@
+keybinds clear-defaults=true {
+    normal {
+        // tabs
+        bind "Ctrl t" { NewTab; }
+        bind "Ctrl w" { CloseTab; }
+        bind "Ctrl Tab" { GoToNextTab; }
+        bind "Ctrl Shift Tab" { GoToPreviousTab; }
+
+        // panes
+        bind "Ctrl d" { NewPane; }
+
+        // movement
+        bind "Alt Left" { MoveFocusOrTab "Left"; }
+        bind "Alt Right" { MoveFocusOrTab "Right"; }
+        bind "Alt Up" { MoveFocus "Up"; }
+        bind "Alt Down" { MoveFocus "Down"; }
+
+        // fullscreen
+        bind "Ctrl Shift Enter" { ToggleFocusFullscreen; }
+
+        // pane borders
+        bind "Ctrl Shift n" { TogglePaneFrames; }
+    }
+}
+
+
+
+ui {
+    pane_frames {
+        hide_session_name true
+    }
+}
+
+default_shell "zsh"
+pane_frames false
+show_startup_tips false
+simplified_ui true
+theme "ansi"
