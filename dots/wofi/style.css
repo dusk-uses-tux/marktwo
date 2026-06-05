@@ -1,50 +1,59 @@
 @import url(".config/wofi/colors.css");
 
 * {
-	border-radius: 0px;
+	 transition: all 0.3s cubic-bezier(0.43, -0.03, 0, 1.2);
+     border-radius: 0px;
 }
 
 window {
-    margin: 8px;
     background-color: @window_bg_color;
     font-family: GoMono Nerd Font;
-    border: 1px solid alpha(@window_fg_color, 0.5);
 }
 
 #input {
     margin: 5px;
     color: @window_fg_color;
     background-color: @window_bg_color;
-    border: 1px solid alpha(@window_fg_color, 0.5);
+	font-size: 17px;
 }
 
-#inner-box {
-    margin: 5px;
-    border: none;
-    background-color: @window_bg_color;
-}
 
 #outer-box {
     margin: 5px;
-    border: none;
-    background-color: @window_bg_color;
 }
 
 #text {
-    margin: 5px;
     border: none;
     color: @window_fg_color;
+	font-size: 15px;
+	margin: 5px;
+}
+
+#entry {
+	padding-left: 12px;
 }
 
 #entry:selected {
     background-color: transparent;
     box-shadow: 14px 2px 13px -20px alpha(@window_fg_color, 0.7) inset;
-    border-left: 1px solid @window_fg_color;
+    border-left: 1px solid @fullscreen_color;
+	border-radius: 0px;
     outline: none;
-        transition: all 300ms ease;
 }
 
 #input:focus {
-    box-shadow: 14px 2px 13px -20px alpha(#F9E2AF, 0.7) inset;
+	margin-bottom: 4px;
+	padding: 8px;
     border-left: 1px solid @fullscreen_color;
+    box-shadow: 14px 2px 13px -20px alpha(#F9E2AF, 0.7) inset;
+    margin-left: 8px;
+}
+
+#entry {
+    transition: all 0.3s ease;
+    margin-left: 0px;
+}
+
+#entry:selected {
+    margin-left: 8px;
 }
