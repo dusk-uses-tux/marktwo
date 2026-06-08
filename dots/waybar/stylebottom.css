@@ -30,7 +30,7 @@ window#waybar {
 }
 
 #taskbar button.maximized {
-    border-left: 1px solid @fullscreen_color;
+    border-left: 1px solid alpha(#F9E2AF, 0.7);
     box-shadow: 14px 2px 13px -20px alpha(#F9E2AF, 0.7) inset;
 }
 
