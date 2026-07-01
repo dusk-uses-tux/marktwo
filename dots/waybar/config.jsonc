@@ -32,8 +32,8 @@
     "format": "{icon}",
 
     "format-icons": {
-      "default": " ♥ ",
-      "active": "  "
+      "default": "♥",
+      "active": ""
     },
 
     // predefine workspaces so they always exist
